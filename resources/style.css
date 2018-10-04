@@ -1,0 +1,19 @@
+.body-tag {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.header {
+    padding-bottom: 1rem;
+    border-bottom: .05rem solid #e5e5e5;
+}
+.jumbotron.mt-3 {
+	text-align: justify;
+}
+.registration-form {
+	padding-bottom: 1.5rem;
+}
+.footer {
+    padding-top: 1.5rem;
+    color: #777;
+    border-top: .05rem solid #e5e5e5;
+}
