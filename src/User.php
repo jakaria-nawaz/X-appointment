@@ -28,16 +28,22 @@ class User {
 		$sql = "SELECT * FROM users WHERE user_name=:user_name";
 		$result = $this->db->selectQuerySingleFetch($sql, $data);
 
-		if (count($result) > 0) {
-			$passwordVerification = password_verify($user_pass, $result['user_pass']);
-			if( $passwordVerification ) {
-		        $_SESSION['user_session'] = $result['user_id'];
-		        $_SESSION['user_name'] = $result['user_name'];
-		        return true;
-		    } else {
-		        return false;
-		    }
-		}
+		if (is_array($result) || $result instanceof Countable) {
+			if (count($result) > 0) {
+				$passwordVerification = password_verify($user_pass, $result['user_pass']);
+				if( $passwordVerification ) {
+			        $_SESSION['user_session'] = $result['user_id'];
+			        $_SESSION['user_name'] = $result['user_name'];
+			        return true;
+			    } else {
+			        return false;
+			    }
+			}
+		} else {
+	        return false;
+	    }
+		
+		
 		
 	} // login
 
