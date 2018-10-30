@@ -6,11 +6,11 @@ require_once 'src/User.php';
 
 $user = new User(new Database);
 if ($user->is_loggedin() != true) {
-    $user->redirect('login.php');
+    $user->redirect('login');
 }
 if (isset($_REQUEST['logout'])) {
     $user->logout();
-    $user->redirect('login.php');
+    $user->redirect('login');
 }
 
 $htmlLayout = new GenerateLayout("X-Appointment (Dashboard)");

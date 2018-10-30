@@ -19,6 +19,11 @@ if ($url == '//') {
     return;
 }
 
+// always remove domain name if exists
+if(str_replace('x-appointment', '', $url)) {
+    $url = str_replace('x-appointment', '', $url);
+}
+
 $routes = Router::getArray();
 foreach ($routes as $route) {
     if (str_replace('/', '', $url) == str_replace('/', '', $route['link'])) {

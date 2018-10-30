@@ -6,14 +6,14 @@ require_once 'src/User.php';
 
 $user = new User(new Database);
 if ($user->is_loggedin() == true) {
-    $user->redirect('dashboard.php');
+    $user->redirect('dashboard');
 }
 
 // login operation
 if (isset($_POST['login_btn'])) {
     $login_result = $user->login($_POST['user_name'], $_POST['password']);
     if ($login_result) {
-        $user->redirect('dashboard.php');
+        $user->redirect('dashboard');
     } else {
         $login_error = "Sorry! Wrong credential!";
     }
