@@ -14,6 +14,7 @@ for ($i = 0; $i < sizeof($scriptName); $i++) {
 
 $command = array_values($requestURI);
 $url = '/' . implode('/', $command) . '/';
+$url = parse_url($url)['path'];
 if ($url == '//') {
     include_once($configs['views'] . '/' . $configs['index']);
     return;
