@@ -3,8 +3,8 @@ include_once('Router.php');
 include_once('routes.php');
 
 $configs = include('config.php');
-$requestURI = explode('/', $_SERVER['REQUEST_URI']);
-$scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
+$requestURI = explode('/', $_SERVER['REQUEST_URI']); // TODO: need to do filtering
+$scriptName = explode('/', $_SERVER['SCRIPT_NAME']); // TODO: need to do filtering
 
 for ($i = 0; $i < sizeof($scriptName); $i++) {
     if ($requestURI[$i] == $scriptName[$i]) {

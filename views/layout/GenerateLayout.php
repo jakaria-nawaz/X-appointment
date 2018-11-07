@@ -7,15 +7,14 @@ class GenerateLayout {
 	function __construct($title) {
 		$this->title = $title;
 	}
-
-
-	public function generateHeader($logged_in = NULL) {
+        
+	public function generateHeader ($logged_in = NULL) {
 		$htmlHeader = '
 			<!DOCTYPE html>
 			<html>
 			<head>
 				<title>' . $this->title . '</title>
-				<link rel="stylesheet" type="text/css" href="resources/style.css">
+				<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 			</head>
 			<body class="body-tag">
